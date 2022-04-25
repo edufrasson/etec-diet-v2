@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+   background-color: #fff9e1;;
+}
+
+main{
+    padding: 10px;
+    height: 100%;
+    background-color: #fff9e1;;
+}
+body{
+    background-color: #fff9e1;;
+    height: 100%;
+}
+.container{background-color: white;}

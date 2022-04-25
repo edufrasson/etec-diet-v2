@@ -1,0 +1,24 @@
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    background-color: #fff9e1;;
+}
+
+.card-refeicao{
+    width: 30%;
+    height: 30%;
+    background-color: white;
+
+    box-shadow: 5px 5px 13px -9px #000000;
+}
+
+.title-container{
+    width: 100%;
+    height: 50px;
+    background-color:#146356;
+    color: white;
+}
