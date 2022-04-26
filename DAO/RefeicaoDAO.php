@@ -26,6 +26,12 @@ class RefeicaoDAO{
         $stmt->bindValue(1, $id);
         $stmt->execute();
 
+       /* $refeicao = $stmt->fetchObject();
+
+        $dao_alimento = new AlimentoDAO();
+
+        $refeicao->alimentos = $dao_alimento->getAllRowsByRefei($refeicao->id);
+*/
         return $stmt->fetchObject();
     }
 
@@ -58,8 +64,15 @@ class RefeicaoDAO{
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->execute();
-        
-        return $stmt->fetchAll(PDO::FETCH_CLASS);    
+
+        $refeicoes = $stmt->fetchAll(PDO::FETCH_CLASS);
+        $dao_assoc = new RefeicaoAlimentoAssocDAO();
+
+        for($i = 0; $i < count($refeicoes); $i++){
+            $refeicoes[$i]->lista_alimentos = $dao_assoc->getByRefeicao($refeicoes[$i]->id);
+        }
+         
+        return $refeicoes;    
     }
   
 }
