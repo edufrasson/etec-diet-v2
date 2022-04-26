@@ -3,6 +3,7 @@
 class RefeicaoModel{
     public $id, $descricao, $horario, $id_dieta;
     public $lista_dietas = array();
+    public $lista_alimentos = array();
 
     public function save(){
         include 'DAO/RefeicaoDAO.php';

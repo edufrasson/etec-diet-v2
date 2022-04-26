@@ -14,10 +14,11 @@
         <?php include 'View/includes/cabecalho_view.php'?>
     </header>
     <main>
-        <div class="container">       
+        <div class="container">
+            <?php foreach($arr_refeicoes as $refeicao): ?>       
             <div class="card-refeicao">
                 <div class="title-container flex">
-                    <h3>REFEICAO X</h3>                    
+                    <h3><?= $refeicao->descricao ?></h3>                    
                 </div>
                 <div class="content-container">
                     <table class="table">
@@ -27,12 +28,17 @@
                             <th scope="col"></th>
                         </thead>
                         <tbody>
-                            <td></td>
-                            <td>g</td>
+                            <?php foreach($refeicao->lista_alimentos as $alimentos): ?>
+
+
+                                <td><?=$alimentos['alimento'] ?></td>
+                                <td><?=$alimentos['quantidade'] ?>g</td> 
+                            <?php endforeach?>
                         </tbody>                        
                     </table>
                 </div>
             </div>
+            <?php endforeach?>
         </div>
     </main>
 </body>

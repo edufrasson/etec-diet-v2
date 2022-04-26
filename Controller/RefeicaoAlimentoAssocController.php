@@ -2,7 +2,7 @@
 
 class RefeicaoAlimentoAssocController{
     public static function form(){
-                $model = new RefeicaoAlimentoAssocModel();
+        $model = new RefeicaoAlimentoAssocModel();
         $model->lista_refeicoes = $model->getAllRefeicoes();
         $model->lista_alimentos = $model->getAllAlimentos();
 
@@ -10,7 +10,9 @@ class RefeicaoAlimentoAssocController{
     }
 
     public static function index(){
-        $lista_alimentos_por_refeicoes = self::listar();
+        $model_refeicao = new RefeicaoModel();
+
+        $arr_refeicoes = $model_refeicao->getAll();
 
         include 'View/modules/Refeicao_Alimento_Assoc/ListarRefeicaoAlimentoAssoc.php';
     }
@@ -28,7 +30,7 @@ class RefeicaoAlimentoAssocController{
 
     public static function listar(){
         
-        $refeicao_model = new RefeicaoModel();
+        /*$refeicao_model = new RefeicaoModel();
         $assoc_model = new RefeicaoAlimentoAssocModel();
 
         $refeicoes = $refeicao_model->getAll();
@@ -43,6 +45,6 @@ class RefeicaoAlimentoAssocController{
         }
 
         //var_dump($lista_alimentos_por_refeicoes);
-        echo $lista_alimentos_por_refeicoes[1][1]['id_alimento'];
+        echo $lista_alimentos_por_refeicoes[1][1]['id_alimento'];*/
     }
 }

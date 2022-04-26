@@ -33,7 +33,15 @@ class RefeicaoAlimentoAssocDAO{
     }
 
     public function getByRefeicao($id_refeicao){
-        $sql = "SELECT * FROM refeicao_alimento_assoc WHERE id_refeicao = ?";
+        $sql = "SELECT assoc.id_refeicao as id_refeicao,
+                    r.descricao as refeicao,
+                     a.nome as alimento,
+                     assoc.quantidade as quantidade
+                FROM etec_diet.refeicao_alimento_assoc assoc
+                JOIN refeicao r on r.id = assoc.id_refeicao
+                JOIN alimento a on a.id = assoc.id_alimento
+                WHERE id_refeicao = ?
+        ";
         $stmt = $this->conexao->prepare($sql);
         
         $stmt->bindValue(1, $id_refeicao);
