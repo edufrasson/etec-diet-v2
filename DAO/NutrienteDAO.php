@@ -30,6 +30,24 @@ class NutrienteDAO{
         return $stmt->fetchObject();
     }
 
+    public function getByAlimento($id){
+        $sql = "SELECT 
+                n.id as id,
+                a.nome as alimento,        
+                n.quantidade / 1000 as quantidade,
+                n.descricao as descricao    
+                FROM nutriente n
+                JOIN alimento a on a.id = n.id_alimento
+                WHERE id_alimento = ?
+        ";
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
+    }
+
     public function delete($id){
         $sql = "DELETE FROM nutriente WHERE id = ?";
         $stmt = $this->conexao->prepare($sql);

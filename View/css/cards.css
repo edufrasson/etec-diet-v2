@@ -5,12 +5,16 @@
 }
 
 .container{
-    background-color: #fff9e1;;
+    background-color: #fff9e1;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
 }
 
 .card-refeicao{
     width: 30%;
     height: 30%;
+    margin: 15px;
     background-color: white;
 
     box-shadow: 5px 5px 13px -9px #000000;

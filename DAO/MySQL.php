@@ -1,9 +1,9 @@
 <?php
 
 class MySQL extends PDO{
-    public $dsn = "mysql:host=localhost:3307;dbname=etec_diet";
+    public $dsn = "mysql:host=localhost;dbname=etec_diet";
     public $user = "root";
-    public $pass = "etecjau";
+    public $pass = "Eduardo@mysql";
     
     private $opcoes = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 

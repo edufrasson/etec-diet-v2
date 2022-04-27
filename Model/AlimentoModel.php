@@ -15,6 +15,7 @@
 class AlimentoModel{    
     public $id, $nome, $id_categoria_alimento, $porcao, $caloria;
     public $lista_categorias = array();
+    public $lista_nutrientes = array();
     
     public function save(){
         include 'DAO/AlimentoDAO.php';

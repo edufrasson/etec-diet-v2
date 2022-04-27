@@ -91,7 +91,15 @@ class AlimentoDAO{
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->execute();
+
+        $alimentos = $stmt->fetchAll(PDO::FETCH_CLASS);
         
-        return $stmt->fetchAll(PDO::FETCH_CLASS);    
+        $dao_nutrientes = new NutrienteDAO();
+
+        for($i = 0; $i < count($alimentos); $i++){
+            $alimentos[$i]->lista_nutrientes = $dao_nutrientes->getByAlimento($alimentos[$i]->id);
+        }
+
+        return $alimentos;    
     }
 }

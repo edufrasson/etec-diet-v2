@@ -47,7 +47,7 @@ class RefeicaoAlimentoAssocDAO{
         $stmt->bindValue(1, $id_refeicao);
         $stmt->execute();
 
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
     }
 
     public function delete($id_alimento, $id_refeicao){
