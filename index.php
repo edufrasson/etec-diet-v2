@@ -37,21 +37,8 @@ switch($uri_parse){
     
     case '/categoria_alimento/save':
         CategoriaAlimentoController::save();
-    break;
-    
-    // Rotas para Categoria_Nutriente
-    case '/categoria_nutriente':
-        CategoriaNutrienteController::index();
-    break;
-
-    case '/categoria_nutriente/form';
-        CategoriaNutrienteController::form();
-    break;
-    
-    case '/categoria_nutriente/save':
-        CategoriaNutrienteController::save();
-    break;  
-    
+    break;    
+   
     // Rotas para Paciente
     case '/paciente':
         PacienteController::index();
@@ -90,14 +77,8 @@ switch($uri_parse){
     case '/alimento/save':
         AlimentoController::save();
     break;
-    // Rotas para Nutriente
-    case '/nutriente':
-        NutrienteController::index();
-    break;
-
-    case '/nutriente/form':
-        NutrienteController::form();
-    break; 
+    
+    // Rotas para Nutriente    
 
     case '/nutriente/save':
         NutrienteController::save();

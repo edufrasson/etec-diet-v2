@@ -19,7 +19,7 @@
     </header>
     <br>
     <div class="container">
-    <form class="border p-5" action="categoria_alimento/save" method="post">
+    <form class="border p-5" action="/categoria_alimento/save" method="post">
         <fieldset >
             <legend>Cadastro de Categoria de Alimentos</legend>
             <div class="form-group">

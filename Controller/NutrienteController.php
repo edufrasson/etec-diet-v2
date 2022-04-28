@@ -1,28 +1,16 @@
 <?php
 
-class NutrienteController{
-    public static function form(){        
-        $model = new NutrienteModel();
-        $model->lista_categoria = $model->getAllCategoriaNutriente();
-        $model->lista_alimentos = $model->getAllAlimentos();
-
-        include 'View/modules/Nutriente/CadastrarNutriente.php';
-    }
-
-    public static function index(){
-        $arr_nutrientes = self::listar();
-
-        include 'View/modules/Nutriente/ListarNutriente.php';
-    }
+class NutrienteController{   
 
     public static function save(){
        
         $model = new NutrienteModel();
 
-        $model->descricao = $_POST['descricao'];
-        $model->quantidade = $_POST['quantidade'] * 1000;
+        $model->carboidrato = $_POST['carboidrato'];
+        $model->proteina = $_POST['proteina'];
+        $model->lipideo = $_POST['lipideo'];
+        $model->fibra = $_POST['fibra'];
         $model->id_alimento = $_POST['id_alimento'];
-        $model->id_categoria_nutriente = $_POST['id_categoria_nutriente'];
 
         $model->save();
 

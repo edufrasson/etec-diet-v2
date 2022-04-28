@@ -23,6 +23,8 @@ class AlimentoController{
     public static function index(){
         $arr_alimentos = self::listar();
 
+   
+
         include 'View/modules/Alimento/ListarAlimento.php';
     }
 
@@ -40,9 +42,19 @@ class AlimentoController{
         $model->id_categoria_alimento = $_POST['id_categoria_alimento'];
 
         // Salvando os dados
-        $model->save();
+        $id_alimento = $model->save();
 
-        header("Location: /alimento");
+        $nutriente = new NutrienteModel();
+
+        $nutriente->carboidrato = $_POST['qnt_carboidrato'];
+        $nutriente->proteina = $_POST['qnt_proteina'];
+        $nutriente->lipideo = $_POST['qnt_lipideo'];
+        $nutriente->fibra = $_POST['qnt_fibra'];
+        $nutriente->id_alimento = $id_alimento;         
+
+        $nutriente->save();
+
+        //header("Location: /alimento");
     }
 
     public static function listar(){

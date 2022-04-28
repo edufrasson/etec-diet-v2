@@ -19,7 +19,7 @@ class CategoriaAlimentoController{
 
         $model->save();
 
-        header("Location: /categoria_alimento");
+        header("Location: /categoria_alimento/form");
     }
 
     public static function listar(){

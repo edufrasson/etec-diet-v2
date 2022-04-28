@@ -10,13 +10,14 @@ class NutrienteDAO{
     }
 
     public function insert(NutrienteModel $model){
-        $sql = "INSERT INTO nutriente(descricao, quantidade, id_alimento, id_categoria_nutriente) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO nutriente(carboidrato, proteina, id_alimento, lipideo, fibra) VALUES (?, ?, ?, ?, ?)";
 
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(1, $model->descricao);
-        $stmt->bindValue(2, $model->quantidade);
+        $stmt->bindValue(1, $model->carboidrato);
+        $stmt->bindValue(2, $model->proteina);
         $stmt->bindValue(3, $model->id_alimento);
-        $stmt->bindValue(4, $model->id_categoria_nutriente);
+        $stmt->bindValue(4, $model->lipideo);
+        $stmt->bindValue(5, $model->fibra);
 
         $stmt->execute();
     }
@@ -34,11 +35,13 @@ class NutrienteDAO{
         $sql = "SELECT 
                 n.id as id,
                 a.nome as alimento,        
-                n.quantidade / 1000 as quantidade,
-                n.descricao as descricao    
-                FROM nutriente n
-                JOIN alimento a on a.id = n.id_alimento
-                WHERE id_alimento = ?
+                n.carboidrato as carboidrato,
+                n.proteina as proteina,
+                n.lipideo as lipideo,
+                n.fibra as fibra   
+            FROM nutriente n
+            JOIN alimento a on a.id = n.id_alimento
+            WHERE id_alimento = ?
         ";
 
         $stmt = $this->conexao->prepare($sql);
@@ -56,24 +59,28 @@ class NutrienteDAO{
     }
 
     public function update(NutrienteModel $model){
-        $sql = "UPDATE nutriente SET descricao = ?, quantidade = ?, id_alimento = ?, id_categoria_nutriente = ? WHERE id = ?";
+        $sql = "UPDATE nutriente SET carboidrato = ?, proteina = ?, id_alimento = ?, lipideo = ?, fibra = ? WHERE id = ?";
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(1, $model->descricao);
-        $stmt->bindValue(2, $model->quantidade);
+        $stmt->bindValue(1, $model->carboidrato);
+        $stmt->bindValue(2, $model->proteina);
         $stmt->bindValue(3, $model->id_alimento);
-        $stmt->bindValue(4, $model->id_categoria_nutriente);
-        $stmt->bindValue(5, $model->id);
+        $stmt->bindValue(4, $model->lipideo);
+        $stmt->bindValue(5, $model->fibra);
+        $stmt->bindValue(6, $model->id);
         $stmt->execute();
     }
 
     public function getAllRows(){
         $sql = "SELECT 
-        n.id as id,
-        a.nome as alimento,        
-        n.quantidade / 1000 as quantidade,
-        n.descricao as descricao    
-        FROM nutriente n
-        JOIN alimento a on a.id = n.id_alimento
+                n.id as id,
+                a.nome as alimento,        
+                n.carboidrato as carboidrato,
+                n.proteina as proteina,
+                n.lipideo as lipideo,
+                n.fibra as fibra   
+            FROM nutriente n
+            JOIN alimento a on a.id = n.id_alimento
+            WHERE id_alimento = ?
         ";
 
         $stmt = $this->conexao->prepare($sql);

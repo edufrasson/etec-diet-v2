@@ -22,7 +22,7 @@ class AlimentoModel{
 
         $dao = new AlimentoDAO();
 
-        $dao->insert($this);
+        return $dao->insert($this);
     }
 
     public function getAll(){
@@ -37,5 +37,5 @@ class AlimentoModel{
         $categoria_alimento_dao = new CategoriaAlimentoDAO();
         
         return $categoria_alimento_dao->getAllRows();
-    }   
+    }      
 }

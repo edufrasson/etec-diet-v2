@@ -23,11 +23,7 @@
   <li class="nav-item">
     <strong><a style="color: #146356; padding-right: 15px;" href="/categoria_alimento/form">Categoria Alimento</a></strong>
   </li>
-  <li class="nav-item">
-    <strong>
-      <a style="color: #146356; padding-right: 20px;" href="/categoria_nutriente/form">Categoria Nutriente</a>
-    </strong>
-  </li>
+ 
   <li class="nav-item">
     <strong>
       <a style="color: #146356; padding-right: 20px;" href="/paciente/form"> Paciente</a>
@@ -41,11 +37,6 @@
   <li class="nav-item">
     <strong>
       <a style="color: #146356; padding-right: 20px;" href="/alimento/form"> Alimento</a>
-    </strong>
-  </li>
-  <li class="nav-item">
-    <strong>
-      <a style="color: #146356; padding-right: 20px;" href="/nutriente/form"> Nutriente</a>
     </strong>
   </li>
   <li class="nav-item">

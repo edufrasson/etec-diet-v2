@@ -7,7 +7,19 @@
     <link rel="stylesheet" href="View/css/listas.css">
     <title>Lista de Alimentos</title>
     <?php include 'View/includes/css_config.php' ?>
-    
+    <style> 
+        .modal-content{
+             background-color:#146356 ;
+        }
+
+        .modal-body{
+             background-color:white;
+        }
+
+        .modal-footer{
+             background-color:white;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -61,27 +73,31 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="staticBackdropLabel"> <?=$alimento->nome?></h5>
-                                    <h6 class="modal-title" id="staticBackdropLabel"> Porção: <?=$alimento->porcao?> gramas</h5>                                   
+                                    <h5 class="modal-title text-white" id="staticBackdropLabel"> <?=$alimento->nome?></h5>
+                                    <h6 class="modal-title text-white" id="staticBackdropLabel"> Porção: <?=$alimento->porcao?> gramas</h5>                                   
                                 </div>
                                 <div class="modal-body">
                                     <table class="table">
                                         <thead>
-                                            <th>Nutriente</th>
-                                            <th>Quantidade</th>
+                                            <th>Carboidrato</th>
+                                            <th>Proteina</th>
+                                            <th>Gordura</th>
+                                            <th>Fibra</th>
                                         </thead>
                                         <tbody>
                                             <?php foreach($alimento->lista_nutrientes as $nutriente):?>
                                                 <tr>
-                                                    <td><?= $nutriente->descricao?></td>
-                                                    <td><?= $nutriente->quantidade?>g</td>
+                                                    <td><?= $nutriente->carboidrato?>g</td>
+                                                    <td><?= $nutriente->proteina?>g</td>
+                                                    <td><?= $nutriente->lipideo?>g</td>
+                                                    <td><?= $nutriente->fibra?>g</td>
                                                 </tr>    
                                             <?php endforeach?>
                                         </tbody>
                                     </table>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>                                
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>                                
                                 </div>
                             </div>
                         </div>

@@ -55,7 +55,9 @@ class AlimentoDAO{
 
         // Executa o código
         $stmt->execute();        
-    }     
+
+        return $this->conexao->lastInsertId();        
+    }   
 
     public function getById($id){
         $sql = "SELECT * FROM alimento WHERE id = ?";

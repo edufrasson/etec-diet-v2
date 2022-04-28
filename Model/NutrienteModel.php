@@ -1,9 +1,7 @@
 <?php 
 
 class NutrienteModel{
-    public $id, $descricao, $quantidade, $id_alimento, $id_categoria_nutriente;
-
-    public $lista_categoria = array();
+    public $id, $carboidrato, $proteina, $lipideo, $fibra, $id_alimento;   
     public $lista_alimentos = array();
 
     public function save(){
@@ -19,13 +17,6 @@ class NutrienteModel{
         $dao = new NutrienteDAO();
         
         return $dao->getAllRows();
-    }
-
-    public function getAllCategoriaNutriente(){
-        include 'DAO/CategoriaNutrienteDAO.php';
-
-        $categoria_nutriente = new CategoriaNutrienteDAO();
-        return $categoria_nutriente->getAllRows();
     }
 
     public function getAllAlimentos(){

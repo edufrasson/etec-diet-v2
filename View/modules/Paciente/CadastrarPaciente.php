@@ -18,7 +18,7 @@
     </header>    
     <br>
     <div class="container">
-    <form class="border p-5" action="paciente/save" method="post">
+    <form class="border p-5" action="/paciente/save" method="post">
         <fieldset >
             <legend>Cadastro de Pacientes</legend>
             <div class="form-group">

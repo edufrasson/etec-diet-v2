@@ -29,7 +29,7 @@
     </header>
     <br>
     <div class="container">
-    <form class="border p-5" action="dieta/save" method="post">
+    <form class="border p-5" action="/dieta/save" method="post">
         <fieldset >
             <legend>Cadastro de Dietas</legend>
             <div class="form-group">

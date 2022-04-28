@@ -25,11 +25,7 @@
   <li class="nav-item">
     <strong><a style="color: #146356; padding-right: 15px;" href="/categoria_alimento">Categoria Alimento</a></strong>
   </li>
-  <li class="nav-item">
-    <strong>
-      <a style="color: #146356; padding-right: 20px;" href="/categoria_nutriente">Categoria Nutriente</a>
-    </strong>
-  </li>
+ 
   <li class="nav-item">
     <strong>
       <a style="color: #146356; padding-right: 20px;" href="/paciente"> Paciente</a>
@@ -47,17 +43,7 @@
   </li>
   <li class="nav-item">
     <strong>
-      <a style="color: #146356; padding-right: 20px;" href="/nutriente"> Nutriente</a>
-    </strong>
-  </li>
-  <li class="nav-item">
-    <strong>
-      <a style="color: #146356; padding-right: 20px;" href="/refeicao"> Refeição</a>
-    </strong>
-  </li>
-  <li class="nav-item">
-    <strong>
-      <a style="color: #146356; padding-right: 20px;" href="/refeicao_alimento"> Refeição_Alimento_Assoc</a>
+      <a style="color: #146356; padding-right: 20px;" href="/refeicao_alimento"> Refeição</a>
     </strong>
   </li>
 </ul>

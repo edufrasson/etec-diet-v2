@@ -19,7 +19,7 @@
     </header>
     <br>
     <div class="container">
-    <form class="border p-5" action="refeicao_alimento/save" method="post">
+    <form class="border p-5" action="/refeicao_alimento/save" method="post">
         <fieldset>
             <legend>Cadastro Refeição Alimento Assoc</legend>
             <div class="form-group">
