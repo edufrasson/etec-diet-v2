@@ -3,7 +3,7 @@
 class CategoriaAlimentoController{
     public static function form(){
         include 'View/modules/Categoria_Alimento/CadastrarCategoriaAlimento.php';
-    }
+    }   
 
     public static function index(){
         $arr_categoria_alimentos = self::listar();

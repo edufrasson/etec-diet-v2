@@ -35,7 +35,7 @@
                     <option value="Café da Tarde">Café da Tarde</option>
                 </select>
                 <br>
-                
+                               
                 <label for="id_dieta">Dieta: </label>
                 <select name="id_dieta" id="id_dieta">
                    
@@ -50,6 +50,7 @@
             </div>
         </fieldset>            
     </form>
+    
     </div>
   
     

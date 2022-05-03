@@ -16,28 +16,28 @@
     <main>
         <div class="container d-flex">
             <?php foreach($arr_refeicoes as $refeicao): ?>       
-            <div class="card-refeicao">
-                <div class="title-container flex">
-                    <h6><?= $refeicao->descricao ?></h6>                    
+                <div class="card-refeicao">
+                    <div class="title-container flex">
+                        <h6><?= $refeicao->descricao ?></h6>                    
+                    </div>
+                    <div class="content-container">
+                        <table class="table">
+                            <thead>
+                                <th scope="col">Alimento</th>
+                                <th scope="col">Quantidade</th>
+                                <th scope="col"></th>
+                            </thead>
+                            <tbody>
+                                <?php foreach($refeicao->lista_alimentos as $alimentos): ?>
+                                    <tr>
+                                        <td><?=$alimentos->alimento ?></td>
+                                        <td><?=$alimentos->quantidade ?>g</td>
+                                    </tr> 
+                                <?php endforeach?>
+                            </tbody>                        
+                        </table>
+                    </div>
                 </div>
-                <div class="content-container">
-                    <table class="table">
-                        <thead>
-                            <th scope="col">Alimento</th>
-                            <th scope="col">Quantidade</th>
-                            <th scope="col"></th>
-                        </thead>
-                        <tbody>
-                            <?php foreach($refeicao->lista_alimentos as $alimentos): ?>
-                                <tr>
-                                    <td><?=$alimentos->alimento ?></td>
-                                    <td><?=$alimentos->quantidade ?>g</td>
-                                </tr> 
-                            <?php endforeach?>
-                        </tbody>                        
-                    </table>
-                </div>
-            </div>
             <?php endforeach?>
         </div>
     </main>

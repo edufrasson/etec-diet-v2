@@ -35,16 +35,6 @@ CREATE TABLE `alimento` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `alimento`
---
-
-LOCK TABLES `alimento` WRITE;
-/*!40000 ALTER TABLE `alimento` DISABLE KEYS */;
-INSERT INTO `alimento` VALUES (1,'Cenoura',100,45,1),(2,'Cenoura',100,45,1),(3,'Cenoura',100,45,1),(4,'Cenoura',100,45,1),(5,'Arroz Branco',100,109,2),(6,'Arroz Branco',100,109,2);
-/*!40000 ALTER TABLE `alimento` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `categoria_alimento`
 --
 
@@ -57,16 +47,6 @@ CREATE TABLE `categoria_alimento` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `categoria_alimento`
---
-
-LOCK TABLES `categoria_alimento` WRITE;
-/*!40000 ALTER TABLE `categoria_alimento` DISABLE KEYS */;
-INSERT INTO `categoria_alimento` VALUES (1,'Legume'),(2,'Grãos');
-/*!40000 ALTER TABLE `categoria_alimento` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `dieta`
@@ -84,17 +64,8 @@ CREATE TABLE `dieta` (
   PRIMARY KEY (`id`),
   KEY `id_paciente` (`id_paciente`),
   CONSTRAINT `dieta_ibfk_1` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dieta`
---
-
-LOCK TABLES `dieta` WRITE;
-/*!40000 ALTER TABLE `dieta` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dieta` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `nutriente`
@@ -117,16 +88,6 @@ CREATE TABLE `nutriente` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `nutriente`
---
-
-LOCK TABLES `nutriente` WRITE;
-/*!40000 ALTER TABLE `nutriente` DISABLE KEYS */;
-INSERT INTO `nutriente` VALUES (1,24,2,1,0,6);
-/*!40000 ALTER TABLE `nutriente` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `paciente`
 --
 
@@ -141,17 +102,8 @@ CREATE TABLE `paciente` (
   `altura` double NOT NULL,
   `sexo` varchar(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `paciente`
---
-
-LOCK TABLES `paciente` WRITE;
-/*!40000 ALTER TABLE `paciente` DISABLE KEYS */;
-/*!40000 ALTER TABLE `paciente` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `refeicao`
@@ -168,17 +120,8 @@ CREATE TABLE `refeicao` (
   PRIMARY KEY (`id`),
   KEY `id_dieta` (`id_dieta`),
   CONSTRAINT `refeicao_ibfk_1` FOREIGN KEY (`id_dieta`) REFERENCES `dieta` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `refeicao`
---
-
-LOCK TABLES `refeicao` WRITE;
-/*!40000 ALTER TABLE `refeicao` DISABLE KEYS */;
-/*!40000 ALTER TABLE `refeicao` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `refeicao_alimento_assoc`
@@ -197,15 +140,6 @@ CREATE TABLE `refeicao_alimento_assoc` (
   CONSTRAINT `refeicao_alimento_assoc_ibfk_2` FOREIGN KEY (`id_refeicao`) REFERENCES `refeicao` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `refeicao_alimento_assoc`
---
-
-LOCK TABLES `refeicao_alimento_assoc` WRITE;
-/*!40000 ALTER TABLE `refeicao_alimento_assoc` DISABLE KEYS */;
-/*!40000 ALTER TABLE `refeicao_alimento_assoc` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Temporary view structure for view `select_paciente`
@@ -253,7 +187,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `select_paciente` AS select 1 AS `id`,1 AS `nome`,1 AS `data_nascimento`,1 AS `sexo`,1 AS `peso`,1 AS `altura` */;
+/*!50001 VIEW `select_paciente` AS select `paciente`.`id` AS `id`,`paciente`.`nome` AS `nome`,date_format(`paciente`.`data_nascimento`,'%d/%m/%Y') AS `data_nascimento`,if((`paciente`.`sexo` = 'M'),'Masculino','Feminino') AS `sexo`,`paciente`.`peso` AS `peso`,`paciente`.`altura` AS `altura` from `paciente` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -285,4 +219,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-27 21:24:50
+-- Dump completed on 2022-05-02 22:13:44
