@@ -1,5 +1,9 @@
 <?php 
 
+namespace App\Model; 
+
+use App\DAO\NutrienteDAO;
+
 class NutrienteModel{
     public $id, $carboidrato, $proteina, $lipideo, $fibra, $id_alimento;   
     public $lista_alimentos = array();

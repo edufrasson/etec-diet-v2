@@ -1,4 +1,7 @@
 <?php 
+
+namespace App\Controller;
+
 class PacienteController{
     public static function form(){
         include 'View/modules/Paciente/CadastrarPaciente.php';

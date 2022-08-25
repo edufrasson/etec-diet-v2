@@ -1,5 +1,7 @@
 <?php
 
+namespace App\DAO; 
+
 class DietaDAO{
 
     public $conexao;

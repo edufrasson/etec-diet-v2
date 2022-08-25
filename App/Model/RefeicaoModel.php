@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Model; 
+
 class RefeicaoModel{
     public $id, $descricao, $horario, $id_dieta;
     public $lista_dietas = array();

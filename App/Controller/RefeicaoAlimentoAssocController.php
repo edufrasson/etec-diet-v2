@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Controller;
+
 class RefeicaoAlimentoAssocController{
     public static function form(){
         $model = new RefeicaoAlimentoAssocModel();

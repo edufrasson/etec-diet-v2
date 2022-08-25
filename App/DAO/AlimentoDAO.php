@@ -24,6 +24,9 @@
   * Executa códigos sql no php (INSERT, UPDATE, SELECT)
   */
 
+  namespace App\DAO; 
+  
+
 
 class AlimentoDAO{
     public $conexao;

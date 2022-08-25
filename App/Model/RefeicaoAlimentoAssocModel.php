@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Model; 
+
+use App\DAO\RefeicaoAlimentoAssocDAO;
+
 class RefeicaoAlimentoAssocModel{
     public $id_refeicao, $id_alimento, $quantidade;
     public $lista_refeicoes = array();

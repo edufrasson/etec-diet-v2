@@ -1,4 +1,7 @@
 <?php
+namespace App\DAO; 
+
+use App\Model\CategoriaAlimentoModel;
 
 class CategoriaAlimentoDAO{
 

@@ -1,4 +1,7 @@
 <?php 
+
+namespace App\Controller;
+
 class DietaController{
     public static function form(){
         

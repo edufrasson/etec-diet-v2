@@ -8,6 +8,7 @@
  *  1- Recebe requisições do usuário e devolve uma view;
  *  2- Preenche a camada model com os dados que o usuário inseriu;
  */
+namespace App\Controller;
 
 
 

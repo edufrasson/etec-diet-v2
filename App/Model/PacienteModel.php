@@ -1,5 +1,9 @@
 <?php 
 
+namespace App\Model; 
+
+use App\DAO\PacienteDAO;
+
 class PacienteModel{
     public $id, $nome, $peso, $altura, $data_nascimento, $sexo;
 

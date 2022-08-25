@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Model; 
+
+use App\DAO\DietaDAO;
+
 class DietaModel{
     public $id, $descricao, $data_inicio, $data_fim, $id_paciente;
 

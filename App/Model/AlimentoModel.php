@@ -10,6 +10,11 @@
  * 
  * 2 - Validação 
  */
+
+namespace App\Model; 
+use App\DAO\{
+    AlimentoDAO, CategoriaAlimentoDAO
+};
  
 
 class AlimentoModel{    

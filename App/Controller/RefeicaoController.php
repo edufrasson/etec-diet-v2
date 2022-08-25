@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Controller;
+
 class RefeicaoController{
     public static function form(){
         
