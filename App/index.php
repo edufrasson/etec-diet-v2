@@ -19,6 +19,11 @@ $uri_parse = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
  * exemplo(arquivo.php, /rota)
  */
 
+use App\Controller\{
+    AlimentoController, CategoriaAlimentoController, DietaController, NutrienteController, 
+    PacienteController, RefeicaoAlimentoAssocController, RefeicaoController
+};
+
 switch($uri_parse){   
 
     // Operador de Resolução de Escopo (::)

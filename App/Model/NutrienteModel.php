@@ -3,6 +3,7 @@
 namespace App\Model; 
 
 use App\DAO\NutrienteDAO;
+use App\DAO\AlimentoDAO;
 
 class NutrienteModel{
     public $id, $carboidrato, $proteina, $lipideo, $fibra, $id_alimento;   

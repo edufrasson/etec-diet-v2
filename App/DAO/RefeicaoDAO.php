@@ -2,6 +2,9 @@
 
 namespace App\DAO; 
 
+use App\Model\RefeicaoModel;
+use \PDO;
+
 class RefeicaoDAO{
     public $conexao;
 

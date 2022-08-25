@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\PacienteModel;
+
 class PacienteController{
     public static function form(){
         include 'View/modules/Paciente/CadastrarPaciente.php';

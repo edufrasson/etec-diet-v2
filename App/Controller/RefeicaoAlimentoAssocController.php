@@ -2,6 +2,9 @@
 
 namespace App\Controller;
 
+use App\Model\RefeicaoAlimentoAssocModel;
+use App\Model\RefeicaoModel;
+
 class RefeicaoAlimentoAssocController{
     public static function form(){
         $model = new RefeicaoAlimentoAssocModel();

@@ -1,6 +1,8 @@
 <?php
 
 namespace App\DAO; 
+use App\Model\NutrienteModel;
+use \PDO;
 
 class NutrienteDAO{
     public $conexao;

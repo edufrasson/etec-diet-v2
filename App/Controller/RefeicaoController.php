@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\RefeicaoModel;
+
 class RefeicaoController{
     public static function form(){
         

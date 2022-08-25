@@ -3,6 +3,8 @@
 namespace App\Model; 
 
 use App\DAO\RefeicaoAlimentoAssocDAO;
+use App\DAO\RefeicaoDAO;
+use App\DAO\AlimentoDAO;
 
 class RefeicaoAlimentoAssocModel{
     public $id_refeicao, $id_alimento, $quantidade;

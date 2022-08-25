@@ -25,6 +25,9 @@
   */
 
   namespace App\DAO; 
+
+use App\Model\AlimentoModel;
+use \PDO;
   
 
 

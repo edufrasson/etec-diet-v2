@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\DietaModel;
+
 class DietaController{
     public static function form(){
         

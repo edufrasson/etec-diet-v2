@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\NutrienteModel;
+
 class NutrienteController{   
 
     public static function save(){

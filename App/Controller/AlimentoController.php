@@ -10,6 +10,9 @@
  */
 namespace App\Controller;
 
+use App\Model\AlimentoModel;
+use App\Model\NutrienteModel;
+
 
 
 class AlimentoController{

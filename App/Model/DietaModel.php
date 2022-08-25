@@ -3,6 +3,7 @@
 namespace App\Model; 
 
 use App\DAO\DietaDAO;
+use App\DAO\PacienteDAO;
 
 class DietaModel{
     public $id, $descricao, $data_inicio, $data_fim, $id_paciente;

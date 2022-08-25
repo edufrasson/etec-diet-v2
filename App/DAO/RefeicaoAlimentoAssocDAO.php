@@ -2,6 +2,9 @@
 
 namespace App\DAO; 
 
+use App\Model\RefeicaoAlimentoAssocModel;
+use \PDO;
+
 class RefeicaoAlimentoAssocDAO{
     public $conexao;
 

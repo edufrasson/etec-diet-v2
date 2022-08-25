@@ -2,6 +2,7 @@
 namespace App\DAO; 
 
 use App\Model\CategoriaAlimentoModel;
+use \PDO;
 
 class CategoriaAlimentoDAO{
 

@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\CategoriaAlimentoModel;
+
 class CategoriaAlimentoController{
     public static function form(){
         include 'View/modules/Categoria_Alimento/CadastrarCategoriaAlimento.php';

@@ -2,6 +2,10 @@
 
 namespace App\Model; 
 
+use App\DAO\{
+    RefeicaoDAO, DietaDAO
+};
+
 class RefeicaoModel{
     public $id, $descricao, $horario, $id_dieta;
     public $lista_dietas = array();

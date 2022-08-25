@@ -1,22 +1,11 @@
 <?php
 
-class Autoload{
-    public function __construct()
-    {
-        spl_autoload_register(function($class){
-            if(file_exists('Model/' . $class . '.php')){
-                include 'Model/' . $class . '.php';
-            }
+spl_autoload_register(function($class){
 
-            if(file_exists('DAO/' . $class . '.php')){
-                include 'DAO/' . $class . '.php';
-            }
+    $arquivo_classe = dirname(__FILE__, 2) . '/' . $class . ".php";   
 
-            if(file_exists('Controller/' . $class . '.php')){
-                include 'Controller/' . $class . '.php';
-            }
-        });
-    }
-}
-
-new Autoload();
+    if(file_exists($arquivo_classe))
+        include $arquivo_classe;
+    else
+        echo "Aquivo não encontrado: " . $arquivo_classe;    
+});

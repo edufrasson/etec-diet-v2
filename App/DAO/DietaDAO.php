@@ -1,6 +1,8 @@
 <?php
 
 namespace App\DAO; 
+use App\Model\DietaModel;
+use \PDO;
 
 class DietaDAO{
 

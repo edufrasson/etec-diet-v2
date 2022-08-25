@@ -2,6 +2,9 @@
 
 namespace App\DAO; 
 
+use App\Model\PacienteModel;
+use \PDO;
+
 class PacienteDAO{
 
     public $conexao;
