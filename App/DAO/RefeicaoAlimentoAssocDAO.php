@@ -3,7 +3,10 @@
 namespace App\DAO; 
 
 use App\Model\RefeicaoAlimentoAssocModel;
+use App\Model\RefeicaoModel;
+use App\Model\AlimentoModel;
 use \PDO;
+use \FFI\Exception;
 
 class RefeicaoAlimentoAssocDAO{
     public $conexao;
@@ -15,16 +18,31 @@ class RefeicaoAlimentoAssocDAO{
     }
 
     public function insert(RefeicaoAlimentoAssocModel $model){
-        $sql = 'INSERT INTO refeicao_alimento_assoc(id_refeicao, id_alimento, quantidade) VALUES (?, ?, ?)';
+        try{            
+            $sql = 'INSERT INTO refeicao_alimento_assoc(id_refeicao, id_alimento, quantidade) VALUES (?, ?, ?)';
 
-        $stmt = $this->conexao->prepare($sql);
+            $stmt = $this->conexao->prepare($sql);
 
-        $stmt->bindValue(1, $model->id_refeicao);
-        $stmt->bindValue(2, $model->id_alimento);
-        $stmt->bindValue(3, $model->quantidade);
+            $stmt->bindValue(1, $model->id_refeicao);
+            $stmt->bindValue(2, $model->id_alimento);
+            $stmt->bindValue(3, $model->quantidade);
 
-        $stmt->execute();
+            $stmt->execute();
+            
+            $model_refeicao = new RefeicaoModel;
+            $dao_refeicao = new RefeicaoDAO;
+            $model_alimento = new AlimentoModel;
 
+            $model_refeicao = $model_refeicao->getById($model->id_refeicao);
+            $model_alimento = $model_alimento->getById($model->id_alimento);
+                    
+            $caloria_nova = (($model->quantidade * $model_alimento->caloria) / $model_alimento->porcao) + $model_refeicao->calorias_totais;
+
+            $dao_refeicao->updateCaloriaById($model->id_refeicao, $caloria_nova);
+            
+        }catch(Exception $ex){            
+            echo $ex->getMessage();
+        }
     }
 
     public function getById($id_alimento, $id_refeicao){

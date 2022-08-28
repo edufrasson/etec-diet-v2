@@ -51,19 +51,19 @@
                     <h4>Nutrientes</h4>
 
                     <label for="qnt_carboidrato">Carboidratos:</label>
-                    <input class="form-control" id="qnt_carboidrato" name="qnt_carboidrato" type="number" step="1" />
+                    <input class="form-control" id="qnt_carboidrato" name="qnt_carboidrato" type="number"/>
                     <br>
 
                     <label for="qnt_proteina">Proteínas:</label>
-                    <input class="form-control" id="qnt_proteina" name="qnt_proteina" type="number" step="1" />
+                    <input class="form-control" id="qnt_proteina" name="qnt_proteina" type="number"/>
                     <br>  
                     
                     <label for="qnt_lipideo">Lipídeos:</label>
-                    <input class="form-control" id="qnt_lipideo" name="qnt_lipideo" type="number" step="1" />
+                    <input class="form-control" id="qnt_lipideo" name="qnt_lipideo" type="number"/>
                     <br>
 
                     <label for="qnt_fibra">Fibras:</label>
-                    <input class="form-control" id="qnt_fibra" name="qnt_fibra" type="number" step="1" />
+                    <input class="form-control" id="qnt_fibra" name="qnt_fibra" type="number"/>
                     <br>
 
                     <button type="submit" class="btn btn-primary mb-3">Cadastrar Alimento</button>

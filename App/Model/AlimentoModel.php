@@ -22,23 +22,25 @@ class AlimentoModel{
     public $lista_categorias = array();
     public $lista_nutrientes = array();
     
-    public function save(){
-        include 'DAO/AlimentoDAO.php';
-
+    public function save(){       
         $dao = new AlimentoDAO();
 
         return $dao->insert($this);
     }
 
-    public function getAll(){
-        include 'DAO/AlimentoDAO.php';
+    public function getAll(){       
         $dao = new AlimentoDAO();
         
         return $dao->getAllRows();
     }
+
+    public function getById($id){       
+        $dao = new AlimentoDAO();
+        
+        return $dao->getById($id);
+    }
     
     public function getAllCategoriaAlimento(){
-        include 'DAO/CategoriaAlimentoDAO.php';
         $categoria_alimento_dao = new CategoriaAlimentoDAO();
         
         return $categoria_alimento_dao->getAllRows();

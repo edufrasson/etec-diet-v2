@@ -17,8 +17,9 @@
         <div class="container d-flex">
             <?php foreach($arr_refeicoes as $refeicao): ?>       
                 <div class="card-refeicao">
-                    <div class="title-container flex">
+                    <div class="title-container flex justify-content-between p-2">
                         <h6><?= $refeicao->descricao ?></h6>                    
+                        <h6>kcal: <?= $refeicao->calorias_totais ?></h6>                    
                     </div>
                     <div class="content-container">
                         <table class="table">

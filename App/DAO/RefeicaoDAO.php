@@ -30,13 +30,17 @@ class RefeicaoDAO{
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $id);
         $stmt->execute();
+       
+        return $stmt->fetchObject();
+    }
 
-       /* $refeicao = $stmt->fetchObject();
-
-        $dao_alimento = new AlimentoDAO();
-
-        $refeicao->alimentos = $dao_alimento->getAllRowsByRefei($refeicao->id);
-*/
+    public function updateCaloriaById($id, $calorias){
+        $sql = "UPDATE refeicao SET calorias_totais = ? WHERE id = ?";
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $calorias);
+        $stmt->bindValue(2, $id);
+        $stmt->execute();
+       
         return $stmt->fetchObject();
     }
 
@@ -60,6 +64,7 @@ class RefeicaoDAO{
 
     public function getAllRows(){
         $sql = "SELECT r.id as id,
+        r.calorias_totais as calorias_totais,
         r.descricao as descricao,
         r.horario as horario,
         d.descricao as nome_dieta

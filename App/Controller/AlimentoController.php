@@ -58,7 +58,7 @@ class AlimentoController{
 
         $nutriente->save();
 
-        //header("Location: /alimento");
+        header("Location: /alimento/form");
     }
 
     public static function listar(){

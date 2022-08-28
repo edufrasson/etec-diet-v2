@@ -11,23 +11,31 @@ class RefeicaoModel{
     public $lista_dietas = array();
     public $lista_alimentos = array();
 
-    public function save(){
-        include 'DAO/RefeicaoDAO.php';
-
+    public function save(){       
         $dao = new RefeicaoDAO();
 
         $dao->insert($this);
     }
 
-    public function getAll(){
-        include 'DAO/RefeicaoDAO.php';
+    public function getAll(){        
         $dao = new RefeicaoDAO();
         
         return $dao->getAllRows();
     }
 
+    public function getById($id){       
+        $dao = new RefeicaoDAO();
+        
+        return $dao->getById($id);
+    }
+
+    public function updateCaloriaById($id, $calorias){        
+        $dao = new RefeicaoDAO();
+        
+        $dao->updateCaloriaById($id, $calorias);
+    }
+
     public function getAllDietas(){
-        include 'DAO/DietaDAO.php';
         $dieta_dao = new DietaDAO();
         
         return $dieta_dao->getAllRows();
