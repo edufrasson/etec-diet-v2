@@ -4,9 +4,6 @@
 -- ------------------------------------------------------
 -- Server version	8.0.28
 
-CREATE DATABASE etec_diet_v2;
-USE etec_diet_v2;
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -34,7 +31,7 @@ CREATE TABLE `alimento` (
   PRIMARY KEY (`id`),
   KEY `id_categoria_alimento` (`id_categoria_alimento`),
   CONSTRAINT `alimento_ibfk_1` FOREIGN KEY (`id_categoria_alimento`) REFERENCES `categoria_alimento` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +45,7 @@ CREATE TABLE `categoria_alimento` (
   `id` int NOT NULL AUTO_INCREMENT,
   `descricao` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -87,7 +84,7 @@ CREATE TABLE `nutriente` (
   PRIMARY KEY (`id`),
   KEY `id_alimento` (`id_alimento`),
   CONSTRAINT `nutriente_ibfk_1` FOREIGN KEY (`id_alimento`) REFERENCES `alimento` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -120,10 +117,11 @@ CREATE TABLE `refeicao` (
   `descricao` varchar(100) NOT NULL,
   `horario` varchar(100) NOT NULL,
   `id_dieta` int NOT NULL,
+  `calorias_totais` double DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_dieta` (`id_dieta`),
   CONSTRAINT `refeicao_ibfk_1` FOREIGN KEY (`id_dieta`) REFERENCES `dieta` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -222,4 +220,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-02 22:13:44
+-- Dump completed on 2022-08-29 20:03:22

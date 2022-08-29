@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `etec_diet_v2` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `etec_diet_v2`;
 -- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
 -- Host: localhost    Database: etec_diet_v2
@@ -23,7 +21,7 @@ USE `etec_diet_v2`;
 
 LOCK TABLES `alimento` WRITE;
 /*!40000 ALTER TABLE `alimento` DISABLE KEYS */;
-INSERT INTO `alimento` VALUES (1,'Cenoura',100,45,1),(2,'Cenoura',100,45,1),(3,'Cenoura',100,45,1),(4,'Cenoura',100,45,1),(5,'Arroz Branco',100,109,2),(6,'Arroz Branco',100,109,2);
+INSERT INTO `alimento` VALUES (7,'Aveia',100,374,3),(8,'Banana',100,89,1);
 /*!40000 ALTER TABLE `alimento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -33,7 +31,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `categoria_alimento` WRITE;
 /*!40000 ALTER TABLE `categoria_alimento` DISABLE KEYS */;
-INSERT INTO `categoria_alimento` VALUES (1,'Legume'),(2,'Grãos');
+INSERT INTO `categoria_alimento` VALUES (1,'Legume'),(2,'Grãos'),(3,'Cereais, pães e tubérculos'),(4,'Frutas');
 /*!40000 ALTER TABLE `categoria_alimento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -53,7 +51,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `nutriente` WRITE;
 /*!40000 ALTER TABLE `nutriente` DISABLE KEYS */;
-INSERT INTO `nutriente` VALUES (1,24,2,1,0,6);
+INSERT INTO `nutriente` VALUES (2,67,14,6,10,7),(3,23,1,0,3,8);
 /*!40000 ALTER TABLE `nutriente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -73,7 +71,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `refeicao` WRITE;
 /*!40000 ALTER TABLE `refeicao` DISABLE KEYS */;
-INSERT INTO `refeicao` VALUES (1,'Arroz com Cenoura','Almoço',1);
+INSERT INTO `refeicao` VALUES (2,'Banana Com Aveia','Café da Tarde',1,368.9);
 /*!40000 ALTER TABLE `refeicao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -83,7 +81,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `refeicao_alimento_assoc` WRITE;
 /*!40000 ALTER TABLE `refeicao_alimento_assoc` DISABLE KEYS */;
-INSERT INTO `refeicao_alimento_assoc` VALUES (1,1,100),(6,1,100);
+INSERT INTO `refeicao_alimento_assoc` VALUES (7,2,60),(8,2,50);
 /*!40000 ALTER TABLE `refeicao_alimento_assoc` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -96,4 +94,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-02 22:13:58
+-- Dump completed on 2022-08-29 20:03:05
