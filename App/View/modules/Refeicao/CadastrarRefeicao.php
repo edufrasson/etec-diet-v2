@@ -63,6 +63,6 @@
     </div>
   
     <?php include 'View/includes/js_config.php';?>
-    
+    <script src="../../js/jquery.multiselectalimentos.js"></script>
 </body>
 </html>
