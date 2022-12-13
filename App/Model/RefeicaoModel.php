@@ -3,7 +3,7 @@
 namespace App\Model; 
 
 use App\DAO\{
-    RefeicaoDAO, DietaDAO
+    RefeicaoDAO, DietaDAO, AlimentoDAO
 };
 
 class RefeicaoModel{
@@ -39,5 +39,11 @@ class RefeicaoModel{
         $dieta_dao = new DietaDAO();
         
         return $dieta_dao->getAllRows();
+    }
+
+    public function getAllAlimentos(){
+        $alimento_dao = new AlimentoDAO();
+        
+        return $alimento_dao->getAllRows();
     }
 }

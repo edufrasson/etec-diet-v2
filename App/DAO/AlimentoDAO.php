@@ -103,7 +103,8 @@ class AlimentoDAO{
         $alimentos = $stmt->fetchAll(PDO::FETCH_CLASS);
         
         $dao_nutrientes = new NutrienteDAO();
-
+        
+        // Preenchendo a lista de nutrientes de cada alimento
         for($i = 0; $i < count($alimentos); $i++){
             $alimentos[$i]->lista_nutrientes = $dao_nutrientes->getByAlimento($alimentos[$i]->id);
         }

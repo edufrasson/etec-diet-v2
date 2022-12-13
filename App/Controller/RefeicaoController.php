@@ -9,6 +9,7 @@ class RefeicaoController{
         
         $model = new RefeicaoModel();
         $model->lista_dietas = $model->getAllDietas();
+        $model->lista_alimentos = $model->getAllAlimentos();
 
         include 'View/modules/Refeicao/CadastrarRefeicao.php';
     }
