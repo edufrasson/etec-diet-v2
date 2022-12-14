@@ -1,3 +1,3 @@
 $(document).ready(function(){
-    $(".selectpicker").selectpicker();
+    $("#id_alimentos").selectpicker();
 })

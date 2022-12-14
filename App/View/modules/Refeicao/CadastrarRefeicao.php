@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../View/includes/virtual-select/virtual-select.min.css">
     <title>Cadastro de Refeições</title>
     <?php include 'View/includes/css_config.php';?>
       <style>
@@ -48,8 +49,7 @@
                 <br><br>   
                 
                 <label for="id_alimentos">Alimentos: </label>
-                <select class="selectpicker" multiple name="id_alimentos" id="id_alimentos">
-                   
+                <select class="native-select" multiple name="id_alimentos" id="id_alimentos">                   
                     <?php foreach($model->lista_alimentos as $alimentos): ?>
                         <option value="<?=$alimentos->id?>"><?= $alimentos->nome ?></option>
                     <?php endforeach ?>
@@ -63,6 +63,12 @@
     </div>
   
     <?php include 'View/includes/js_config.php';?>
-    <script src="../../js/jquery.multiselectalimentos.js"></script>
+    <script src="../../../View/includes/virtual-select/virutal-select.min.js"></script>
+    <script>
+        VirtualSelect.init({
+            ele: '#id_alimentos'
+        });         
+       
+    </script>
 </body>
 </html>
