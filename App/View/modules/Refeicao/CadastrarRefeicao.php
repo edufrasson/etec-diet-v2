@@ -49,7 +49,7 @@
                 <br><br>   
                 
                 <label for="id_alimentos">Alimentos: </label>
-                <select class="native-select" multiple name="id_alimentos" id="id_alimentos">                   
+                <select class="native-select" multiple search-bar="true"name="id_alimentos" id="id_alimentos">                   
                     <?php foreach($model->lista_alimentos as $alimentos): ?>
                         <option value="<?=$alimentos->id?>"><?= $alimentos->nome ?></option>
                     <?php endforeach ?>
